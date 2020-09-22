@@ -25,13 +25,13 @@ class TestDjango(TestCase):
         self.assertRedirects(response, '/')
 
     def can_toggle(self):
-        item = Item.objects.create(name='Test to do')
-        response = self.client.get(f'/delete/{item.id}')
-        self.assertRedirects(response, '/')
-
-    def can_delete(self):
         item = Item.objects.create(name='Test to do', done=True)
         response = self.client.get(f'/toggle/{item.id}')
         self.assertRedirects(response, '/')
         updated_item = Item.objects.get(id=item.id)
         self.assertFalse(updated_item.done)
+
+    def can_delete(self):
+        item = Item.objects.create(name='Test to do')
+        response = self.client.get(f'/delete/{item.id}')
+        self.assertRedirects(response, '/')
