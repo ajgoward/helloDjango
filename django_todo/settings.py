@@ -26,7 +26,7 @@ SECRET_KEY = '(&xh$dcrn#mq!gbth%g9rcjx*v2g438$x=9u3xi#lsk=0b%im8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://ajgoward-todolistapp.herokuapp.com/']
 
 
 # Application definition
